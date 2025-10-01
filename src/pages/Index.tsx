@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -64,17 +65,20 @@ const Index = () => {
               image={serviceTech}
               title="Tech Consulting"
               description="Streamline your operations with AI-driven solutions."
+              link="/tech-consulting"
               pixelated
             />
             <ServiceCard
               image={serviceDigital}
               title="Digital Strategy"
               description="Maximalist approaches for bold market impact."
+              link="/digital-strategy"
             />
             <ServiceCard
               image={serviceInnovation}
               title="Innovation Labs"
               description="Fluid forms of creativity for future-proofing."
+              link="/innovation-labs"
             />
           </div>
         </div>
@@ -173,15 +177,17 @@ const ServiceCard = ({
   image,
   title,
   description,
+  link,
   pixelated = false,
 }: {
   image: string;
   title: string;
   description: string;
+  link?: string;
   pixelated?: boolean;
 }) => {
-  return (
-    <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border border-border">
+  const content = (
+    <>
       <img
         src={image}
         alt={title}
@@ -189,6 +195,25 @@ const ServiceCard = ({
       />
       <h2 className="text-2xl font-bold mb-3 uppercase tracking-wide">{title}</h2>
       <p className="text-muted-foreground leading-relaxed">{description}</p>
+    </>
+  );
+
+  if (link) {
+    return (
+      <Link to={link} className="block">
+        <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border border-border cursor-pointer group">
+          {content}
+          <div className="mt-4 text-neon text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            View Previous Designs →
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  return (
+    <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border border-border">
+      {content}
     </div>
   );
 };
