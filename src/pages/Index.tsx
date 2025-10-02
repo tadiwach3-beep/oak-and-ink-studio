@@ -151,47 +151,151 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="metallic-gradient py-16 px-4">
-        <div className="container mx-auto max-w-2xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 uppercase tracking-wider neon-glow text-foreground">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 uppercase tracking-wider neon-glow text-foreground">
             Contact Us
           </h2>
-          <form
-            onSubmit={handleSubmit}
-            className="bg-background/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl border-2 border-transparent hover:border-neon transition-all duration-300 card-glow"
-          >
-            <div className="space-y-4">
-              <Input
-                type="text"
-                placeholder="Name"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-card/50 border-muted focus:border-neon transition-all duration-300 rounded-xl h-12"
-              />
-              <Input
-                type="email"
-                placeholder="Email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-card/50 border-muted focus:border-neon transition-all duration-300 rounded-xl h-12"
-              />
-              <Textarea
-                placeholder="Your Message"
-                required
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="bg-card/50 border-muted focus:border-neon transition-all duration-300 rounded-xl min-h-32 resize-y"
-              />
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full metallic-gradient text-foreground text-lg font-bold rounded-xl h-12 hover:scale-105 hover:card-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Sending..." : "Send"}
-              </Button>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Contact Information */}
+            <div className="bg-background/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl border-2 border-border card-glow space-y-6">
+              <h3 className="text-2xl font-bold uppercase tracking-wide mb-6">Get In Touch</h3>
+              
+              <div className="space-y-4">
+                <a 
+                  href="mailto:studiooakandink@gmail.com"
+                  className="flex items-start gap-3 text-muted-foreground hover:text-neon transition-colors duration-300 group"
+                >
+                  <div className="mt-1 text-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Email</p>
+                    <p className="group-hover:underline">studiooakandink@gmail.com</p>
+                  </div>
+                </a>
+
+                <a 
+                  href="tel:0733971530"
+                  className="flex items-start gap-3 text-muted-foreground hover:text-neon transition-colors duration-300 group"
+                >
+                  <div className="mt-1 text-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Phone</p>
+                    <p className="group-hover:underline">073 397 1530</p>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://oak-and-ink-studio.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-muted-foreground hover:text-neon transition-colors duration-300 group"
+                >
+                  <div className="mt-1 text-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Website</p>
+                    <p className="group-hover:underline">oak-and-ink-studio.lovable.app</p>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://www.facebook.com/OakandInkStudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-muted-foreground hover:text-neon transition-colors duration-300 group"
+                >
+                  <div className="mt-1 text-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Facebook</p>
+                    <p className="group-hover:underline">Oak and Ink Studio</p>
+                  </div>
+                </a>
+
+                <div className="flex items-start gap-3 text-muted-foreground">
+                  <div className="mt-1 text-neon">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Location</p>
+                    <p>Stellenbosch, Cape Town</p>
+                    <p>South Africa</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </form>
+
+            {/* Contact Form */}
+            <form
+              onSubmit={handleSubmit}
+              className="bg-background/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl border-2 border-transparent hover:border-neon transition-all duration-300 card-glow"
+            >
+              <h3 className="text-2xl font-bold uppercase tracking-wide mb-6">Send a Message</h3>
+              <div className="space-y-4">
+                <Input
+                  type="text"
+                  placeholder="Name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="bg-card/50 border-muted focus:border-neon transition-all duration-300 rounded-xl h-12"
+                />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="bg-card/50 border-muted focus:border-neon transition-all duration-300 rounded-xl h-12"
+                />
+                <Textarea
+                  placeholder="Your Message"
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="bg-card/50 border-muted focus:border-neon transition-all duration-300 rounded-xl min-h-32 resize-y"
+                />
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full metallic-gradient text-foreground text-lg font-bold rounded-xl h-12 hover:scale-105 hover:card-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Sending..." : "Send"}
+                </Button>
+              </div>
+            </form>
+          </div>
+
+          {/* Map */}
+          <div className="bg-background/80 backdrop-blur-sm p-4 rounded-3xl border-2 border-border card-glow">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52707.179745034226!2d18.8246!3d-33.9321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcdb4c0e80e9d9b%3A0x3e2b0c8b7d7c8c8c!2sStellenbosch%2C%20Cape%20Town%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-2xl"
+            />
+          </div>
         </div>
       </section>
     </div>
