@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 import heroImage from "@/assets/hero-image.jpg";
 import serviceTech from "@/assets/service-tech.jpg";
 import serviceDigital from "@/assets/service-digital.jpg";
@@ -19,18 +20,41 @@ const Index = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
     
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you soon.",
-      className: "border-neon bg-card text-neon",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      await emailjs.send(
+        'service_j4uq0tv',
+        'template_o3ejpm7',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        '0f_z_WXqoZC089jnN'
+      );
+      
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you soon.",
+        className: "border-neon bg-card text-neon",
+      });
+      
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -161,9 +185,10 @@ const Index = () => {
               />
               <Button
                 type="submit"
-                className="w-full metallic-gradient text-foreground text-lg font-bold rounded-xl h-12 hover:scale-105 hover:card-glow transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full metallic-gradient text-foreground text-lg font-bold rounded-xl h-12 hover:scale-105 hover:card-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send
+                {isSubmitting ? "Sending..." : "Send"}
               </Button>
             </div>
           </form>
