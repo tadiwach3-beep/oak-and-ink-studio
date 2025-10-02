@@ -60,20 +60,30 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <header className="metallic-gradient py-20 md:py-32 text-center relative overflow-hidden">
+      <header className="wine-gradient py-20 md:py-32 text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider neon-glow mb-4 text-foreground">
-            Forge Your Future
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider elegant-glow mb-4 text-foreground">
+            Oak and Ink Studio
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-foreground/90">
-            Bold minimalism meets neon nostalgia in our 2025 portfolio.
+          <p className="text-xl md:text-2xl mb-4 gold-accent font-semibold">
+            AI-Powered Graphic Design in Stellenbosch
+          </p>
+          <p className="text-lg md:text-xl mb-8 text-foreground/90 max-w-3xl mx-auto">
+            Crafting Bold Brands for Wineries & Tourism | From R1,000 | Stellenbosch, South Africa
           </p>
           <div className="max-w-4xl mx-auto">
             <img
               src={heroImage}
-              alt="Hyper-realistic 3D Hero"
-              className="w-full rounded-full pixel-glitch float-animation"
+              alt="Oak and Ink Studio - AI-Powered Graphic Design"
+              className="w-full rounded-3xl oak-texture float-animation shadow-2xl"
             />
+          </div>
+          <div className="mt-8">
+            <a href="#contact">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300">
+                Book a Free Mockup
+              </Button>
+            </a>
           </div>
         </div>
       </header>
@@ -81,55 +91,59 @@ const Index = () => {
       {/* Services Section */}
       <section id="services" className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 uppercase tracking-wider">
-            Our Services
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider">
+            Our Design Services
           </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            From logos to full business identities, we use cutting-edge AI tools to deliver stunning designs fast and affordably
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ServiceCard
               image={serviceTech}
-              title="Tech Consulting"
-              description="Streamline your operations with AI-driven solutions."
-              link="/tech-consulting"
-              pixelated
+              title="Logo Design"
+              description="Minimalist abstract & vintage rustic logos. Standard: R1,000 | Premium: R3,000 | Gold: R5,000"
+              pricing="From R1,000"
             />
             <ServiceCard
               image={serviceDigital}
-              title="Digital Strategy"
-              description="Maximalist approaches for bold market impact."
-              link="/digital-strategy"
+              title="Social Media Graphics"
+              description="Vibrant minimalism & bold storytelling posts. Standard: R1,000 | Premium: R3,000 | Gold: R5,000"
+              pricing="From R1,000"
             />
             <ServiceCard
               image={serviceInnovation}
-              title="Innovation Labs"
-              description="Fluid forms of creativity for future-proofing."
-              link="/innovation-labs"
+              title="Business Identity"
+              description="Complete brand packages with business cards, letterheads & more. Standard: R2,000 | Gold: R6,000"
+              pricing="From R2,000"
             />
           </div>
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-16 px-4 bg-card/50">
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-16 px-4 bg-card/50">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 uppercase tracking-wider">
-            Case Studies
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider">
+            Our Portfolio
           </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Showcasing our best work for wineries, tourism businesses, and local Stellenbosch brands
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ServiceCard
               image={caseAlpha}
-              title="Project Alpha"
-              description="Problem: Outdated systems. Solution: AI integration. Impact: 50% efficiency boost."
-              pixelated
+              title="Winery Logo Design"
+              description="Custom minimalist logo for Stellenbosch wine estate – R1,000. Elegant design reflecting organic terroir."
             />
             <ServiceCard
               image={caseBeta}
-              title="Project Beta"
-              description="Neon nostalgia revamp increased engagement by 200%."
+              title="Tourism Social Graphics"
+              description="Vibrant social media campaign for local guesthouse – R3,000. Increased engagement by 150%."
             />
             <ServiceCard
               image={caseGamma}
-              title="Project Gamma"
-              description="Metallic designs drove viral growth."
+              title="Restaurant Brand Identity"
+              description="Complete business identity for Cape Winelands restaurant – R6,000. Logo, menus, business cards."
             />
           </div>
         </div>
@@ -138,23 +152,31 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-16 px-4 text-center">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 uppercase tracking-wider">
-            About Us
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 uppercase tracking-wider gold-accent">
+            Why Oak and Ink?
           </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            <strong>Oak and Ink Studio</strong> is your local AI-powered graphic design hub in <strong>Stellenbosch, South Africa</strong>. 
+            Specializing in logos, social media graphics, business identities, and more, we serve wineries, tourism spots, 
+            and small businesses with affordable, fast designs starting from <strong>R1,000</strong>.
+          </p>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            We blend 2025 trends like AI-powered creativity and bold minimalism to showcase your business.
-            Our approach combines cutting-edge technology with stunning visual design to create portfolios
-            that stand out in the digital landscape.
+            Using cutting-edge free AI tools, we craft custom solutions reflecting Stellenbosch's wine and culture vibe. 
+            From minimalist abstract logos to vibrant social campaigns, we blend 2025 design trends with local authenticity. 
+            Based in the heart of Cape Winelands, we understand what makes your brand stand out.
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="metallic-gradient py-16 px-4">
+      <section id="contact" className="wine-gradient py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 uppercase tracking-wider neon-glow text-foreground">
-            Contact Us
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider elegant-glow text-foreground">
+            Book Your Design
           </h2>
+          <p className="text-center text-foreground/80 mb-12 max-w-2xl mx-auto">
+            Ready to elevate your brand? Get a free mockup or discuss your project. We respond within 24 hours.
+          </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Contact Information */}
@@ -294,9 +316,9 @@ const Index = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full metallic-gradient text-foreground text-lg font-bold rounded-xl h-12 hover:scale-105 hover:card-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold rounded-xl h-12 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                 >
-                  {isSubmitting ? "Sending..." : "Send"}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </div>
             </form>
@@ -326,22 +348,25 @@ const ServiceCard = ({
   title,
   description,
   link,
-  pixelated = false,
+  pricing,
 }: {
   image: string;
   title: string;
   description: string;
   link?: string;
-  pixelated?: boolean;
+  pricing?: string;
 }) => {
   const content = (
     <>
       <img
         src={image}
         alt={title}
-        className={`w-full rounded-2xl mb-4 ${pixelated ? "pixel-glitch" : "filter contrast-125 brightness-110"}`}
+        className="w-full rounded-2xl mb-4 oak-texture hover:scale-105 transition-transform duration-300"
       />
-      <h2 className="text-2xl font-bold mb-3 uppercase tracking-wide">{title}</h2>
+      <h2 className="text-2xl font-bold mb-3 uppercase tracking-wide gold-accent">{title}</h2>
+      {pricing && (
+        <p className="text-primary font-bold text-lg mb-2">{pricing}</p>
+      )}
       <p className="text-muted-foreground leading-relaxed">{description}</p>
     </>
   );
@@ -349,10 +374,10 @@ const ServiceCard = ({
   if (link) {
     return (
       <Link to={link} className="block">
-        <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border border-border cursor-pointer group">
+        <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border-2 border-border hover:border-primary cursor-pointer group">
           {content}
-          <div className="mt-4 text-neon text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            View Previous Designs →
+          <div className="mt-4 gold-accent text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            View Details →
           </div>
         </div>
       </Link>
@@ -360,7 +385,7 @@ const ServiceCard = ({
   }
 
   return (
-    <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border border-border">
+    <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border-2 border-border hover:border-primary">
       {content}
     </div>
   );
