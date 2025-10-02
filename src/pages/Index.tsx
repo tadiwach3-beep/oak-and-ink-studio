@@ -178,20 +178,33 @@ const Index = () => {
                   </div>
                 </a>
 
-                <a 
-                  href="tel:0733971530"
-                  className="flex items-start gap-3 text-muted-foreground hover:text-neon transition-colors duration-300 group"
-                >
-                  <div className="mt-1 text-neon">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
+                <div className="space-y-3">
+                  <p className="text-sm font-semibold text-foreground flex items-center gap-2">
+                    <span className="text-neon">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                      </svg>
+                    </span>
+                    Phone
+                  </p>
+                  <div className="flex flex-wrap gap-3 ml-7">
+                    <a 
+                      href="tel:0733971530"
+                      className="text-muted-foreground hover:text-neon transition-colors duration-300 hover:underline"
+                    >
+                      Call: 073 397 1530
+                    </a>
+                    <span className="text-muted-foreground">•</span>
+                    <a 
+                      href="https://wa.me/27733971530"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-neon transition-colors duration-300 hover:underline"
+                    >
+                      WhatsApp
+                    </a>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">Phone</p>
-                    <p className="group-hover:underline">073 397 1530</p>
-                  </div>
-                </a>
+                </div>
 
                 <a 
                   href="https://oak-and-ink-studio.lovable.app"
@@ -227,7 +240,12 @@ const Index = () => {
                   </div>
                 </a>
 
-                <div className="flex items-start gap-3 text-muted-foreground">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=35+luyolo+road+stellenbosch+kayamandi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-muted-foreground hover:text-neon transition-colors duration-300 group"
+                >
                   <div className="mt-1 text-neon">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -235,10 +253,11 @@ const Index = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">Location</p>
-                    <p>Stellenbosch, Cape Town</p>
-                    <p>South Africa</p>
+                    <p className="group-hover:underline">35 Luyolo Road, Kayamandi</p>
+                    <p className="group-hover:underline">Stellenbosch, Cape Town</p>
+                    <p className="group-hover:underline">South Africa</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -286,7 +305,7 @@ const Index = () => {
           {/* Map */}
           <div className="bg-background/80 backdrop-blur-sm p-4 rounded-3xl border-2 border-border card-glow">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52707.179745034226!2d18.8246!3d-33.9321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcdb4c0e80e9d9b%3A0x3e2b0c8b7d7c8c8c!2sStellenbosch%2C%20Cape%20Town%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.8987634281234!2d18.8658!3d-33.9321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d0c0c0c0c0d%3A0x0!2s35%20Luyolo%20Rd%2C%20Kayamandi%2C%20Stellenbosch%2C%207600!5e0!3m2!1sen!2sza!4v1234567890"
               width="100%"
               height="400"
               style={{ border: 0 }}
