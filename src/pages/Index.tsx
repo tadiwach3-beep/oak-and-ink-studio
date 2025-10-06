@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Grape, ChevronDown } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import heroImage from "@/assets/hero-image.jpg";
 import serviceTech from "@/assets/service-tech.jpg";
@@ -21,6 +23,7 @@ const Index = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [whyChooseOpen, setWhyChooseOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,6 +120,101 @@ const Index = () => {
               pricing="From R2,000"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-[hsl(120,34%,27%)] via-[hsl(140,40%,25%)] to-[hsl(30,25%,20%)]">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <Grape className="w-12 h-12 text-[hsl(43,65%,53%)]" strokeWidth={1.5} />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4 text-foreground">
+              Why Choose Us?
+            </h2>
+            <p className="text-foreground/80 text-lg mb-6">
+              Discover what makes Oak and Ink Studio the perfect partner for your Stellenbosch brand
+            </p>
+          </div>
+
+          <Collapsible open={whyChooseOpen} onOpenChange={setWhyChooseOpen}>
+            <div className="bg-background/20 backdrop-blur-sm rounded-3xl border-2 border-[hsl(43,65%,53%)]/30 p-6 md:p-8">
+              <CollapsibleTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  className="w-full flex items-center justify-between text-left hover:bg-[hsl(43,65%,53%)]/10 rounded-xl p-4 group"
+                >
+                  <span className="text-xl md:text-2xl font-bold text-[hsl(43,65%,53%)] uppercase tracking-wide">
+                    See Details
+                  </span>
+                  <ChevronDown 
+                    className={`w-6 h-6 text-[hsl(43,65%,53%)] transition-transform duration-300 ${whyChooseOpen ? 'rotate-180' : ''}`} 
+                  />
+                </Button>
+              </CollapsibleTrigger>
+
+              <CollapsibleContent className="mt-6 space-y-6 animate-in slide-in-from-top-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Local Expertise</h3>
+                        <p className="text-foreground/90 leading-relaxed">
+                          Tailored designs for Stellenbosch wineries and tourism, crafted with AI speed.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Affordable Quality</h3>
+                        <p className="text-foreground/90 leading-relaxed">
+                          Starting at R1,000 with free AI tools, beating South African agency rates.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Fast Turnaround</h3>
+                        <p className="text-foreground/90 leading-relaxed">
+                          Deliveries in 1-3 days, perfect for urgent winery events.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Personalized Service</h3>
+                        <p className="text-foreground/90 leading-relaxed">
+                          One-on-one support and free mockups for every client.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center pt-4">
+                  <a href="#services">
+                    <Button className="bg-[hsl(43,65%,53%)] hover:bg-[hsl(43,65%,63%)] text-[hsl(120,34%,27%)] font-bold text-lg px-8 py-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+                      Explore Our Services
+                    </Button>
+                  </a>
+                </div>
+              </CollapsibleContent>
+            </div>
+          </Collapsible>
         </div>
       </section>
 
