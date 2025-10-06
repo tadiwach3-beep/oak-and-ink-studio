@@ -23,6 +23,7 @@ import wineryLogo6 from "@/assets/winery-logo-6.jpg";
 import wineryLogo7 from "@/assets/winery-logo-7.jpg";
 import wineryLogo8 from "@/assets/winery-logo-8.jpg";
 import wineryLogo9 from "@/assets/winery-logo-9.jpg";
+import oakInkLogo from "@/assets/oak-ink-logo.png";
 
 const Index = () => {
   const { toast } = useToast();
@@ -74,6 +75,13 @@ const Index = () => {
       {/* Hero Section */}
       <header className="wine-gradient py-20 md:py-32 text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
+          <div className="flex justify-center mb-6">
+            <img 
+              src={oakInkLogo} 
+              alt="Oak & Ink Studio Logo" 
+              className="w-48 h-48 md:w-64 md:h-64 object-contain elegant-glow animate-in zoom-in duration-700"
+            />
+          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider elegant-glow mb-4 text-foreground">
             Oak and Ink Studio
           </h1>
