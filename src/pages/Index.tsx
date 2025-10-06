@@ -14,6 +14,15 @@ import serviceInnovation from "@/assets/service-innovation.jpg";
 import caseAlpha from "@/assets/case-alpha.jpg";
 import caseBeta from "@/assets/case-beta.jpg";
 import caseGamma from "@/assets/case-gamma.jpg";
+import wineryLogo1 from "@/assets/winery-logo-1.jpg";
+import wineryLogo2 from "@/assets/winery-logo-2.jpg";
+import wineryLogo3 from "@/assets/winery-logo-3.jpg";
+import wineryLogo4 from "@/assets/winery-logo-4.jpg";
+import wineryLogo5 from "@/assets/winery-logo-5.jpg";
+import wineryLogo6 from "@/assets/winery-logo-6.jpg";
+import wineryLogo7 from "@/assets/winery-logo-7.jpg";
+import wineryLogo8 from "@/assets/winery-logo-8.jpg";
+import wineryLogo9 from "@/assets/winery-logo-9.jpg";
 
 const Index = () => {
   const { toast } = useToast();
@@ -243,6 +252,49 @@ const Index = () => {
               title="Restaurant Brand Identity"
               description="Complete business identity for Cape Winelands restaurant – R6,000. Logo, menus, business cards."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Winery Logo References Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-[hsl(45,60%,90%)] via-[hsl(40,55%,88%)] to-[hsl(35,50%,85%)]">
+        <div className="container mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <Grape className="w-12 h-12 text-[hsl(120,34%,27%)]" strokeWidth={1.5} />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4 text-[hsl(120,34%,27%)]">
+              Winery Logo References
+            </h2>
+            <p className="text-[hsl(120,34%,27%)]/80 text-lg max-w-2xl mx-auto">
+              Minimalist and modern logo designs inspired by Stellenbosch wineries, featuring vineyard greens and gold accents
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {[wineryLogo1, wineryLogo2, wineryLogo3, wineryLogo4, wineryLogo5, wineryLogo6, wineryLogo7, wineryLogo8, wineryLogo9].map((logo, index) => (
+              <div
+                key={index}
+                className="aspect-square bg-white rounded-2xl border-2 border-[hsl(43,65%,53%)] p-4 hover:border-[hsl(43,65%,63%)] hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group overflow-hidden"
+              >
+                <img
+                  src={logo}
+                  alt={`Stellenbosch Winery Logo ${index + 1}`}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-[hsl(120,34%,27%)]/70 text-sm md:text-base mb-6">
+              These designs showcase our ability to create distinctive brand identities for Stellenbosch wine estates
+            </p>
+            <a href="#contact">
+              <Button className="bg-[hsl(120,34%,27%)] hover:bg-[hsl(120,34%,32%)] text-white font-bold text-lg px-8 py-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+                Get Your Custom Logo
+              </Button>
+            </a>
           </div>
         </div>
       </section>
