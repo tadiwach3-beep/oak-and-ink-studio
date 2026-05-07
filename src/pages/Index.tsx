@@ -499,34 +499,35 @@ const ServiceCard = ({
 }) => {
   const content = (
     <>
-      <img
-        src={image}
-        alt={title}
-        className="w-full rounded-2xl mb-4 oak-texture hover:scale-105 transition-transform duration-300"
-      />
-      <h2 className="text-2xl font-bold mb-3 uppercase tracking-wide gold-accent">{title}</h2>
-      {pricing && (
-        <p className="text-primary font-bold text-lg mb-2">{pricing}</p>
-      )}
-      <p className="text-muted-foreground leading-relaxed">{description}</p>
+      <div className="overflow-hidden mb-5">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-56 object-cover oak-texture group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+      <div className="flex items-baseline justify-between mb-2">
+        <h3 className="text-xl font-black uppercase tracking-wide group-hover:text-primary transition-colors">{title}</h3>
+        {pricing && <span className="text-primary font-bold text-sm">{pricing}</span>}
+      </div>
+      <p className="text-muted-foreground leading-relaxed text-sm">{description}</p>
     </>
   );
 
   if (link) {
     return (
-      <Link to={link} className="block">
-        <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border-2 border-border hover:border-primary cursor-pointer group">
-          {content}
-          <div className="mt-4 gold-accent text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            View Details →
-          </div>
+      <Link to={link} className="block bg-background hover:bg-card transition-colors p-6 group">
+        {content}
+        <div className="mt-4 text-primary text-xs uppercase tracking-wider font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+          View Details →
         </div>
       </Link>
     );
   }
 
   return (
-    <div className="bg-card rounded-3xl p-6 transition-all duration-300 hover:scale-105 hover:card-glow border-2 border-border hover:border-primary">
+    <div className="bg-background hover:bg-card transition-colors p-6 group">
       {content}
     </div>
   );
