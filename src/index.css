@@ -8,50 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 25 20% 8%;
-    --foreground: 40 10% 95%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 30 15% 12%;
-    --card-foreground: 40 10% 95%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 30 15% 12%;
-    --popover-foreground: 40 10% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 43 75% 52%;
-    --primary-foreground: 25 20% 8%;
+    --primary: 16 100% 55%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 140 30% 30%;
-    --secondary-foreground: 40 10% 95%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 30 15% 20%;
-    --muted-foreground: 40 8% 65%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 43 85% 60%;
-    --accent-foreground: 25 20% 8%;
+    --accent: 16 100% 55%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 10% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 43 75% 52%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 16 100% 55%;
 
-    --radius: 1.25rem;
+    --radius: 0.5rem;
 
-    /* Wine-inspired design tokens */
-    --wine-green: 140 40% 25%;
-    --wine-gold: 43 85% 60%;
-    --oak-brown: 30 25% 20%;
-    --ink-black: 25 20% 8%;
-    
-    --sidebar-background: 30 15% 10%;
-    --sidebar-foreground: 40 10% 95%;
-    --sidebar-primary: 43 75% 52%;
-    --sidebar-primary-foreground: 25 20% 8%;
-    --sidebar-accent: 30 15% 20%;
-    --sidebar-accent-foreground: 40 10% 95%;
-    --sidebar-border: 30 15% 25%;
-    --sidebar-ring: 43 75% 52%;
+    /* Bold dark portfolio tokens */
+    --neon-glow: 16 100% 55%;
+    --orange-bright: 16 100% 55%;
+    --orange-deep: 14 90% 48%;
+    --ink-black: 0 0% 6%;
+    --ink-soft: 0 0% 9%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 16 100% 55%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 16 100% 55%;
   }
 }
 
@@ -62,69 +63,71 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Young Serif', serif;
+    font-family: 'Inter', 'Young Serif', sans-serif;
     position: relative;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://img.freepik.com/premium-vector/black-halftone-dot-grain-texture-pixel-popart-abstract-pattern-background_470367-8417.jpg');
-    background-size: cover;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: -1;
   }
 }
 
 @layer utilities {
-  .wine-gradient {
-    background: linear-gradient(135deg, hsl(var(--wine-green)), hsl(var(--oak-brown)), hsl(var(--wine-gold) / 0.3));
+  .metallic-gradient {
+    background: linear-gradient(135deg, hsl(var(--orange-deep)), hsl(var(--orange-bright)));
+  }
+
+  .dark-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 9%));
+  }
+
+  .orange-block {
+    background: hsl(var(--orange-bright));
+  }
+
+  .neon-glow {
+    color: hsl(var(--orange-bright));
+    text-shadow: 0 0 18px hsl(var(--orange-bright) / 0.6);
   }
 
   .gold-accent {
-    color: hsl(var(--wine-gold));
-    text-shadow: 0 0 10px hsl(var(--wine-gold) / 0.5);
+    color: hsl(var(--orange-bright));
   }
 
   .elegant-glow {
-    animation: elegant-pulse 2s ease-in-out infinite alternate;
+    animation: pulse-orange 2.4s ease-in-out infinite alternate;
   }
 
-  @keyframes elegant-pulse {
-    0% {
-      text-shadow: 0 0 5px hsl(var(--wine-gold)), 0 0 10px hsl(var(--wine-gold));
-    }
-    50% {
-      text-shadow: 0 0 15px hsl(var(--wine-gold)), 0 0 25px hsl(var(--wine-gold)), 0 0 35px hsl(var(--wine-gold) / 0.5);
-    }
-    100% {
-      text-shadow: 0 0 5px hsl(var(--wine-gold)), 0 0 10px hsl(var(--wine-gold));
-    }
+  @keyframes pulse-orange {
+    0% { box-shadow: 0 0 0 hsl(var(--orange-bright) / 0); }
+    100% { box-shadow: 0 0 40px hsl(var(--orange-bright) / 0.55); }
   }
 
   .float-animation {
-    animation: float 3s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
   }
 
   .oak-texture {
-    filter: contrast(1.1) brightness(0.95) sepia(0.2);
+    filter: contrast(1.1) brightness(0.95);
   }
 
   .card-glow {
-    box-shadow: 0 0 20px hsl(var(--wine-gold) / 0.15), 0 0 40px hsl(var(--wine-green) / 0.1);
+    box-shadow: 0 0 0 1px hsl(var(--border)), 0 20px 50px -20px hsl(var(--orange-bright) / 0.25);
+  }
+
+  .pixel-glitch {
+    filter: contrast(1.05) saturate(1.1);
+  }
+
+  .text-neon {
+    color: hsl(var(--orange-bright));
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 }
