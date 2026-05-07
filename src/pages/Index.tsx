@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Grape, ChevronDown } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-portrait.jpg";
 import serviceTech from "@/assets/service-tech.jpg";
 import serviceDigital from "@/assets/service-digital.jpg";
 import serviceInnovation from "@/assets/service-innovation.jpg";
@@ -71,235 +71,235 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
+      {/* Top Nav */}
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+        <div className="container mx-auto px-4 flex items-center justify-between h-16">
+          <div className="flex items-center gap-3">
+            <img src={oakInkLogo} alt="Oak & Ink Studio" className="h-9 w-9 object-contain" />
+            <span className="font-bold uppercase tracking-widest text-sm">Oak <span className="text-primary">&</span> Ink</span>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider text-muted-foreground">
+            <a href="#about" className="hover:text-primary transition-colors">About</a>
+            <a href="#services" className="hover:text-primary transition-colors">Services</a>
+            <a href="#portfolio" className="hover:text-primary transition-colors">Projects</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+          </div>
+          <a href="#contact">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none uppercase tracking-wider text-xs font-bold h-9 px-4">
+              Hire Me
+            </Button>
+          </a>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <header className="wine-gradient py-20 md:py-32 text-center relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex justify-center mb-6">
-            <img 
-              src={oakInkLogo} 
-              alt="Oak & Ink Studio Logo" 
-              className="w-48 h-48 md:w-64 md:h-64 object-contain elegant-glow animate-in zoom-in duration-700"
-            />
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider elegant-glow mb-4 text-foreground">
-            Oak and Ink Studio
-          </h1>
-          <p className="text-xl md:text-2xl mb-4 gold-accent font-semibold">
-            AI-Powered Graphic Design in Stellenbosch
-          </p>
-          <p className="text-lg md:text-xl mb-8 text-foreground/90 max-w-3xl mx-auto">
-            Crafting Bold Brands for Wineries & Tourism | From R1,000 | Stellenbosch, South Africa
-          </p>
-          <div className="max-w-4xl mx-auto">
-            <img
-              src={heroImage}
-              alt="Oak and Ink Studio - AI-Powered Graphic Design"
-              className="w-full rounded-3xl oak-texture float-animation shadow-2xl"
-            />
-          </div>
-          <div className="mt-8">
-            <a href="#contact">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-xl font-bold shadow-lg hover:scale-105 transition-all duration-300">
-                Book a Free Mockup
-              </Button>
-            </a>
+      <header className="relative overflow-hidden border-b border-border">
+        <div className="absolute top-0 right-0 w-1/3 h-full orange-block hidden md:block" />
+        <div className="absolute inset-0 grid-bg opacity-50" />
+        <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4 font-bold">// Stellenbosch · ZA</p>
+              <h1 className="text-5xl md:text-7xl font-black uppercase leading-[0.95] mb-6">
+                Hello.<br/>
+                I'm <span className="text-primary">Oak &amp; Ink</span><br/>
+                Studio.
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-md mb-8 leading-relaxed">
+                AI-powered graphic design for wineries, tourism &amp; bold brands. From R1,000 — delivered in 1–3 days.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="#contact">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none uppercase tracking-wider font-bold h-12 px-8">
+                    Book Free Mockup
+                  </Button>
+                </a>
+                <a href="#portfolio">
+                  <Button variant="outline" className="rounded-none uppercase tracking-wider font-bold h-12 px-8 border-2 border-foreground/20 hover:border-primary hover:text-primary">
+                    View Work
+                  </Button>
+                </a>
+              </div>
+              <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border max-w-md">
+                <div>
+                  <div className="text-3xl font-black text-primary">120+</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Projects</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-black text-primary">95%</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Happy Clients</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-black text-primary">10+</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Years Local</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full" />
+              <img
+                src={heroImage}
+                alt="Oak and Ink Studio designer portrait"
+                className="relative w-full max-w-md mx-auto float-animation"
+                width={1024}
+                height={1280}
+              />
+            </div>
           </div>
         </div>
       </header>
 
+      {/* About Section short */}
+      <section id="about" className="py-20 px-4 border-b border-border">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4 font-bold">// About</p>
+            <h2 className="text-4xl md:text-5xl font-black uppercase leading-tight">
+              Bold design,<br/>built fast.
+            </h2>
+          </div>
+          <div className="md:col-span-2 space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <p>
+              <strong className="text-foreground">Oak and Ink Studio</strong> is a Stellenbosch-based design studio fusing AI tools with handcrafted detail. We build identities for wineries, tourism brands, and small businesses across the Cape Winelands.
+            </p>
+            <p>
+              From minimalist logos to vibrant social campaigns, we move at the speed of modern brands — without losing the soul of local craft.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="services" className="py-16 px-4">
+      <section id="services" className="py-20 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider">
-            Our Design Services
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            From logos to full business identities, we use cutting-edge AI tools to deliver stunning designs fast and affordably
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+            <div>
+              <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4 font-bold">// Services</p>
+              <h2 className="text-4xl md:text-5xl font-black uppercase">What I Do</h2>
+            </div>
+            <p className="text-muted-foreground max-w-sm">Cutting-edge AI tools, fast delivery, transparent pricing.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
             <ServiceCard
               image={serviceTech}
               title="Logo Design"
-              description="Minimalist abstract & vintage rustic logos. Standard: R1,000 | Premium: R3,000 | Gold: R5,000"
+              description="Minimalist abstract & vintage rustic logos. Standard / Premium / Gold tiers."
               pricing="From R1,000"
             />
             <ServiceCard
               image={serviceDigital}
-              title="Social Media Graphics"
-              description="Vibrant minimalism & bold storytelling posts. Standard: R1,000 | Premium: R3,000 | Gold: R5,000"
+              title="Social Graphics"
+              description="Vibrant minimalism & bold storytelling posts that stop the scroll."
               pricing="From R1,000"
             />
             <ServiceCard
               image={serviceInnovation}
-              title="Business Identity"
-              description="Complete brand packages with business cards, letterheads & more. Standard: R2,000 | Gold: R6,000"
+              title="Brand Identity"
+              description="Complete packages — logo, cards, letterheads, brand guidelines."
               pricing="From R2,000"
             />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-[hsl(120,34%,27%)] via-[hsl(140,40%,25%)] to-[hsl(30,25%,20%)]">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-4">
-              <Grape className="w-12 h-12 text-[hsl(43,65%,53%)]" strokeWidth={1.5} />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4 text-foreground">
-              Why Choose Us?
-            </h2>
-            <p className="text-foreground/80 text-lg mb-6">
-              Discover what makes Oak and Ink Studio the perfect partner for your Stellenbosch brand
-            </p>
+      {/* Why Choose Us — bold dark variant */}
+      <section className="py-20 px-4 border-b border-border bg-card/30">
+        <div className="container mx-auto max-w-5xl">
+          <div className="mb-10">
+            <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4 font-bold">// Why Us</p>
+            <h2 className="text-4xl md:text-5xl font-black uppercase">Why Choose Oak &amp; Ink?</h2>
           </div>
 
           <Collapsible open={whyChooseOpen} onOpenChange={setWhyChooseOpen}>
-            <div className="bg-background/20 backdrop-blur-sm rounded-3xl border-2 border-[hsl(43,65%,53%)]/30 p-6 md:p-8">
-              <CollapsibleTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  className="w-full flex items-center justify-between text-left hover:bg-[hsl(43,65%,53%)]/10 rounded-xl p-4 group"
-                >
-                  <span className="text-xl md:text-2xl font-bold text-[hsl(43,65%,53%)] uppercase tracking-wide">
-                    See Details
-                  </span>
-                  <ChevronDown 
-                    className={`w-6 h-6 text-[hsl(43,65%,53%)] transition-transform duration-300 ${whyChooseOpen ? 'rotate-180' : ''}`} 
-                  />
-                </Button>
-              </CollapsibleTrigger>
+            <CollapsibleTrigger asChild>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none uppercase tracking-wider font-bold h-12 px-8 mb-8">
+                {whyChooseOpen ? 'Hide Details' : 'See Details'}
+                <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${whyChooseOpen ? 'rotate-180' : ''}`} />
+              </Button>
+            </CollapsibleTrigger>
 
-              <CollapsibleContent className="mt-6 space-y-6 animate-in slide-in-from-top-2">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Local Expertise</h3>
-                        <p className="text-foreground/90 leading-relaxed">
-                          Tailored designs for Stellenbosch wineries and tourism, crafted with AI speed.
-                        </p>
-                      </div>
+            <CollapsibleContent className="animate-in slide-in-from-top-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+                {[
+                  { t: 'Local Expertise', d: 'Tailored designs for Stellenbosch wineries and tourism, crafted with AI speed.' },
+                  { t: 'Affordable Quality', d: 'Starting at R1,000 with free AI tools, beating South African agency rates.' },
+                  { t: 'Fast Turnaround', d: 'Deliveries in 1–3 days, perfect for urgent winery events.' },
+                  { t: 'Personalized Service', d: 'One-on-one support and free mockups for every client.' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-background p-8 hover:bg-card transition-colors group">
+                    <div className="flex items-baseline gap-4 mb-3">
+                      <span className="text-primary font-black text-2xl">0{i+1}</span>
+                      <h3 className="text-xl font-bold uppercase tracking-wide group-hover:text-primary transition-colors">{item.t}</h3>
                     </div>
+                    <p className="text-muted-foreground leading-relaxed">{item.d}</p>
                   </div>
-
-                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Affordable Quality</h3>
-                        <p className="text-foreground/90 leading-relaxed">
-                          Starting at R1,000 with free AI tools, beating South African agency rates.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Fast Turnaround</h3>
-                        <p className="text-foreground/90 leading-relaxed">
-                          Deliveries in 1-3 days, perfect for urgent winery events.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(43,65%,53%)]/20 hover:border-[hsl(43,65%,53%)]/50 transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <Grape className="w-6 h-6 text-[hsl(43,65%,53%)] flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="text-xl font-bold text-[hsl(43,65%,53%)] mb-2">Personalized Service</h3>
-                        <p className="text-foreground/90 leading-relaxed">
-                          One-on-one support and free mockups for every client.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center pt-4">
-                  <a href="#services">
-                    <Button className="bg-[hsl(43,65%,53%)] hover:bg-[hsl(43,65%,63%)] text-[hsl(120,34%,27%)] font-bold text-lg px-8 py-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
-                      Explore Our Services
-                    </Button>
-                  </a>
-                </div>
-              </CollapsibleContent>
-            </div>
+                ))}
+              </div>
+            </CollapsibleContent>
           </Collapsible>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-16 px-4 bg-card/50">
+      <section id="portfolio" className="py-20 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider">
-            Our Portfolio
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Showcasing our best work for wineries, tourism businesses, and local Stellenbosch brands
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+            <div>
+              <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4 font-bold">// Projects</p>
+              <h2 className="text-4xl md:text-5xl font-black uppercase">Recent Work</h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
             <ServiceCard
               image={caseAlpha}
-              title="Winery Logo Design"
-              description="Custom minimalist logo for Stellenbosch wine estate – R1,000. Elegant design reflecting organic terroir."
+              title="Winery Logo"
+              description="Custom minimalist logo for Stellenbosch wine estate."
+              pricing="R1,000"
             />
             <ServiceCard
               image={caseBeta}
-              title="Tourism Social Graphics"
-              description="Vibrant social media campaign for local guesthouse – R3,000. Increased engagement by 150%."
+              title="Tourism Social"
+              description="Vibrant social media campaign — +150% engagement."
+              pricing="R3,000"
             />
             <ServiceCard
               image={caseGamma}
-              title="Restaurant Brand Identity"
-              description="Complete business identity for Cape Winelands restaurant – R6,000. Logo, menus, business cards."
+              title="Restaurant Brand"
+              description="Complete identity for a Cape Winelands restaurant."
+              pricing="R6,000"
             />
           </div>
         </div>
       </section>
 
       {/* Winery Logo References Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-[hsl(45,60%,90%)] via-[hsl(40,55%,88%)] to-[hsl(35,50%,85%)]">
+      <section className="py-20 px-4 border-b border-border bg-card/30">
         <div className="container mx-auto">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-4">
-              <Grape className="w-12 h-12 text-[hsl(120,34%,27%)]" strokeWidth={1.5} />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4 text-[hsl(120,34%,27%)]">
-              Winery Logo References
-            </h2>
-            <p className="text-[hsl(120,34%,27%)]/80 text-lg max-w-2xl mx-auto">
-              Minimalist and modern logo designs inspired by Stellenbosch wineries, featuring vineyard greens and gold accents
-            </p>
+          <div className="mb-12">
+            <p className="text-primary uppercase tracking-[0.3em] text-xs mb-4 font-bold">// Gallery</p>
+            <h2 className="text-4xl md:text-5xl font-black uppercase">Winery Logo References</h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-border">
             {[wineryLogo1, wineryLogo2, wineryLogo3, wineryLogo4, wineryLogo5, wineryLogo6, wineryLogo7, wineryLogo8, wineryLogo9].map((logo, index) => (
               <div
                 key={index}
-                className="aspect-square bg-white rounded-2xl border-2 border-[hsl(43,65%,53%)] p-4 hover:border-[hsl(43,65%,63%)] hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group overflow-hidden"
+                className="aspect-square bg-background p-6 hover:bg-primary/10 transition-colors flex items-center justify-center group"
               >
                 <img
                   src={logo}
                   alt={`Stellenbosch Winery Logo ${index + 1}`}
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <p className="text-[hsl(120,34%,27%)]/70 text-sm md:text-base mb-6">
-              These designs showcase our ability to create distinctive brand identities for Stellenbosch wine estates
-            </p>
+          <div className="mt-10">
             <a href="#contact">
-              <Button className="bg-[hsl(120,34%,27%)] hover:bg-[hsl(120,34%,32%)] text-white font-bold text-lg px-8 py-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none uppercase tracking-wider font-bold h-12 px-8">
                 Get Your Custom Logo
               </Button>
             </a>
@@ -307,7 +307,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Old About Section (kept for anchor compatibility but hidden) */}
+      <section id="about-extra" className="hidden">
+        <div></section></section>
+        </div>
+      </section>
+
+      {/* dummy to satisfy prior structure */}
+      <section className="hidden">
+        <div></div>
       <section id="about" className="py-16 px-4 text-center">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold mb-8 uppercase tracking-wider gold-accent">
