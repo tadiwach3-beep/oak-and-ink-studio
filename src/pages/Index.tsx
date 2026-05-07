@@ -309,7 +309,8 @@ const Index = () => {
 
 
       {/* Contact Section */}
-      <section id="contact" className="wine-gradient py-16 px-4">
+      <section id="contact" className="dark-gradient py-20 px-4 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-32 h-32 orange-block hidden md:block" />
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider elegant-glow text-foreground">
             Book Your Design
