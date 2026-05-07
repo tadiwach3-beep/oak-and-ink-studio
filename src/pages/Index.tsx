@@ -307,32 +307,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Old About Section (kept for anchor compatibility but hidden) */}
-      <section id="about-extra" className="hidden">
-        <div></section></section>
-        </div>
-      </section>
-
-      {/* dummy to satisfy prior structure */}
-      <section className="hidden">
-        <div></div>
-      <section id="about" className="py-16 px-4 text-center">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 uppercase tracking-wider gold-accent">
-            Why Oak and Ink?
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-            <strong>Oak and Ink Studio</strong> is your local AI-powered graphic design hub in <strong>Stellenbosch, South Africa</strong>. 
-            Specializing in logos, social media graphics, business identities, and more, we serve wineries, tourism spots, 
-            and small businesses with affordable, fast designs starting from <strong>R1,000</strong>.
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Using cutting-edge free AI tools, we craft custom solutions reflecting Stellenbosch's wine and culture vibe. 
-            From minimalist abstract logos to vibrant social campaigns, we blend 2025 design trends with local authenticity. 
-            Based in the heart of Cape Winelands, we understand what makes your brand stand out.
-          </p>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="wine-gradient py-16 px-4">
