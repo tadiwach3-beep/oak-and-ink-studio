@@ -2,57 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 6%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 16 100% 55%;
-    --primary-foreground: 0 0% 8%;
-
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 16 100% 55%;
-    --accent-foreground: 0 0% 8%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 11 80% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 33%;
+    --accent: 11 80% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 16 100% 55%;
-
-    --radius: 0.5rem;
-
-    /* Bold dark portfolio tokens */
-    --neon-glow: 16 100% 55%;
-    --orange-bright: 16 100% 55%;
-    --orange-deep: 14 90% 48%;
-    --ink-black: 0 0% 6%;
-    --ink-soft: 0 0% 9%;
-
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 16 100% 55%;
-    --sidebar-primary-foreground: 0 0% 8%;
-    --sidebar-accent: 0 0% 14%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 16 100% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 11 80% 53%;
+    --radius: 0.25rem;
+    --accent-soft: 18 100% 97%;
+    --accent-dark: 10 76% 45%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 11 80% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 18 100% 97%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 11 80% 53%;
   }
 }
 
@@ -63,71 +45,35 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Young Serif', sans-serif;
-    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
+@layer components {
+  .studio-container { @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12; }
+  .section-space { @apply py-20 sm:py-24 lg:py-32; }
+  .eyebrow { @apply text-xs font-bold uppercase text-primary; }
+  .nav-link { @apply text-sm font-medium text-foreground transition-colors hover:text-primary; }
+  .section-heading { @apply max-w-3xl; }
+  .section-heading h2 { @apply mt-4 font-heading text-4xl font-semibold leading-tight sm:text-5xl; }
+  .section-heading > p:last-child:not(:first-child) { @apply mt-5 max-w-2xl text-lg leading-8 text-muted-foreground; }
+  .form-label { @apply flex flex-col gap-2 text-sm font-semibold; }
+  .form-control { @apply h-12 rounded-sm border-border bg-background focus-visible:ring-primary; }
+}
+
 @layer utilities {
-  .metallic-gradient {
-    background: linear-gradient(135deg, hsl(var(--orange-deep)), hsl(var(--orange-bright)));
-  }
+  .bg-accent-soft { background-color: hsl(var(--accent-soft)); }
+  .shadow-editorial { box-shadow: 12px 12px 0 hsl(var(--accent-soft)); }
+}
 
-  .dark-gradient {
-    background: linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 9%));
-  }
-
-  .orange-block {
-    background: hsl(var(--orange-bright));
-  }
-
-  .neon-glow {
-    color: hsl(var(--orange-bright));
-    text-shadow: 0 0 18px hsl(var(--orange-bright) / 0.6);
-  }
-
-  .gold-accent {
-    color: hsl(var(--orange-bright));
-  }
-
-  .elegant-glow {
-    animation: pulse-orange 2.4s ease-in-out infinite alternate;
-  }
-
-  @keyframes pulse-orange {
-    0% { box-shadow: 0 0 0 hsl(var(--orange-bright) / 0); }
-    100% { box-shadow: 0 0 40px hsl(var(--orange-bright) / 0.55); }
-  }
-
-  .float-animation {
-    animation: float 4s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-14px); }
-  }
-
-  .oak-texture {
-    filter: contrast(1.1) brightness(0.95);
-  }
-
-  .card-glow {
-    box-shadow: 0 0 0 1px hsl(var(--border)), 0 20px 50px -20px hsl(var(--orange-bright) / 0.25);
-  }
-
-  .pixel-glitch {
-    filter: contrast(1.05) saturate(1.1);
-  }
-
-  .text-neon {
-    color: hsl(var(--orange-bright));
-  }
-
-  .grid-bg {
-    background-image:
-      linear-gradient(hsl(0 0% 100% / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 100% / 0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
