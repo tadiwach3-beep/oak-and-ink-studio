@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'young-serif': ['Young Serif', 'serif'],
+        heading: ['Space Grotesk', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,6 +52,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: "hsl(var(--neon-glow))",
+        "accent-soft": "hsl(var(--accent-soft))",
+        "accent-dark": "hsl(var(--accent-dark))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
